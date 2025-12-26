@@ -4,18 +4,27 @@ dotenv.config();
 import express from "express";
 import cors from "cors";
 import translationRoute from "./routes/translation.js";
-const key = process.env.KEY;
-console.log("P3",key);
-
 
 const app = express();
 
 /* ---------------- MIDDLEWARE ---------------- */
 
-app.use(cors({
-  origin: ["http://localhost:3000"], // 🔐 change when deployed
-  methods: ["GET"],
-}));
+// ✅ Proper CORS setup
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",               // Vite dev server
+      "http://localhost:3000",               // optional (CRA)
+      "https://weather-backend-g6xf.onrender.com" // backend itself
+    ],
+    methods: ["GET", "OPTIONS"],
+    allowedHeaders: ["Content-Type"],
+    credentials: false,
+  })
+);
+
+// ✅ Handle preflight requests (VERY IMPORTANT)
+app.options("*", cors());
 
 app.use(express.json());
 
@@ -41,9 +50,8 @@ app.use((err, req, res, next) => {
 
 /* ---------------- SERVER ---------------- */
 
-const PORT = process.env.PORT;
-
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`🚀 Backend running on http://localhost:${PORT}`);
+  console.log(`🚀 Backend running on port ${PORT}`);
 });
