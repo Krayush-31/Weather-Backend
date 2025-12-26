@@ -15,7 +15,8 @@ app.use(
     origin: [
       "http://localhost:5173",               // Vite dev server
       "http://localhost:3000",               // optional (CRA)
-      "https://weather-backend-g6xf.onrender.com" // backend itself
+      "https://weather-backend-g6xf.onrender.com",
+      "https://cloudstoknow.vercel.app"  
     ],
     methods: ["GET", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
