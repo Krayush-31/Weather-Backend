@@ -1,0 +1,10 @@
+{
+  "title": "मौसम पूर्वानुमान",
+  "searchPlaceholder": "शहर का नाम दर्ज करें",
+  "searchBtn": "खोजें",
+  "currentWeather": "वर्तमान मौसम",
+  "forecast": "7-दिवसीय पूर्वानुमान",
+  "loading": "लोड हो रहा है...",
+  "humidity": "नमी",
+  "wind": "हवा"
+}

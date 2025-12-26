@@ -1,0 +1,10 @@
+{
+  "title": "Weather Forecast",
+  "searchPlaceholder": "Enter city",
+  "searchBtn": "Search",
+  "currentWeather": "Current Weather",
+  "forecast": "7-Day Forecast",
+  "loading": "Loading...",
+  "humidity": "Humidity",
+  "wind": "Wind"
+}
